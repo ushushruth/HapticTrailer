@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.VideoHapticApp" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary branding color -->
+        <item name="colorPrimary">#0D47A1</item> <!-- Deep Blue -->
+        <item name="colorPrimaryDark">#002171</item> <!-- Darker Blue -->
+        <item name="colorAccent">#FFC107</item> <!-- Amber -->
+        <item name="android:textColorPrimary">#212121</item> <!-- Dark Gray -->
+        <item name="android:windowBackground">#FFFFFF</item> <!-- White background -->
+    </style>
+</resources>
