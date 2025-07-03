@@ -32,18 +32,25 @@ class MainActivity : AppCompatActivity() {
     private val hapticEvents = mutableListOf<HapticEvent>()
     private val triggeredTimestamps = LinkedHashSet<Long>()
 
+    private var lastCheckedPosition: Long = 0L
+
     private val updateRunnable = object : Runnable {
         override fun run() {
             val currentPosition = player.currentPosition
+
             for (event in hapticEvents) {
-                if (!triggeredTimestamps.contains(event.timestamp) && currentPosition >= event.timestamp) {
+                if (!triggeredTimestamps.contains(event.timestamp) &&
+                    event.timestamp in lastCheckedPosition..currentPosition) {
                     triggerVibration(event)
                     triggeredTimestamps.add(event.timestamp)
                 }
             }
-            handler.postDelayed(this, 50)
+
+            lastCheckedPosition = currentPosition
+            handler.postDelayed(this, 30)
         }
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -119,10 +126,6 @@ class MainActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             vibrator.vibrate(event.pattern, event.repeat)
         }
-
-        handler.postDelayed({
-            vibrator.cancel()
-        }, event.duration)
     }
 
     override fun onDestroy() {

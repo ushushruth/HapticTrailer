@@ -5,7 +5,7 @@
 
     {
       "timestamp": 15000,
-      "duration": 3500,
+      "duration": 2500,
       "pattern": [0, 80, 0, 100, 0, 150, 0, 3170],
       "amplitudes": [0, 150, 0, 200, 0, 255, 0, 10],
       "repeat": -1
@@ -54,8 +54,8 @@
     },
     {
       "timestamp": 27301,
-      "duration": 1500,
-      "pattern": [0, 1500],
+      "duration": 1000,
+      "pattern": [0, 1000],
       "amplitudes": [0, 100],
       "repeat": -1
     },
@@ -372,7 +372,7 @@
     {
       "timestamp": 113185,
       "duration": 2000,
-      "pattern": [0,4000],
+      "pattern": [0,2000],
       "amplitudes": [0,255],
       "repeat": -1
 
@@ -431,10 +431,3 @@
 
   ]
 }
-data class HapticEvent(
-val timestamp: Long,
-val duration: Long,
-val pattern: LongArray,
-val amplitudes: IntArray,
-val repeat: Int
-)
