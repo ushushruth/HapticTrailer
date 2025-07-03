@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             lastCheckedPosition = currentPosition
-            handler.postDelayed(this, 30)
+            handler.postDelayed(this, 20)
         }
     }
 
