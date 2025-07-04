@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         val playerView = findViewById<PlayerView>(R.id.player_view)
         player = ExoPlayer.Builder(this).build()
         playerView.player = player
+        playerView.keepScreenOn = true
 
         val uri = Uri.parse("android.resource://$packageName/raw/trailer0")
         val mediaItem = MediaItem.fromUri(uri)
